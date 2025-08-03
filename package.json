@@ -1,0 +1,41 @@
+{
+  "name": "adYugo_idr",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.adYugo.idr",
+    "productName": "adYugo IDR",
+    "files": [
+      "build/**/*",
+      "main.js",
+      "proxy-server.js",
+      "slackUtils.js",
+      "assets/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "icon": "assets/adYugo",
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/adYugo.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/adYugo.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.3.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.9"
+  }
+}
