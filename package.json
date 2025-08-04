@@ -7,7 +7,8 @@
     "dist": "electron-builder",
     "start:proxy": "npx pm2 start proxy-server.js --name proxy",
     "start:ui": "npx pm2 start npm --name ui -- run start --cwd adyugo-idr-ui",
-    "start:all": "npm run start:proxy && npm run start:ui"
+    "start:ui:pm2": "npx pm2 start 'npm run start' --name ui --cwd ./adyugo-idr-ui",
+    "start:all": "npm run start:proxy && npm run start:ui:pm2"
   },
   "build": {
     "appId": "com.adYugo.idr",
