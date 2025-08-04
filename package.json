@@ -4,7 +4,10 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "start:proxy": "npx pm2 start proxy-server.js --name proxy",
+    "start:ui": "npx pm2 start npm --name ui -- run start --cwd adyugo-idr-ui",
+    "start:all": "npm run start:proxy && npm run start:ui"
   },
   "build": {
     "appId": "com.adYugo.idr",
@@ -36,6 +39,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "node-fetch": "^2.6.9"
+    "node-fetch": "^2.6.9",
+    "pm2": "^6.0.8"
   }
 }
